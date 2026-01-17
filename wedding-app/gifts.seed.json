@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Cafetera",
+    "imageUrl": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6",
+    "productUrl": "https://www.mercadolibre.com.uy/",
+    "order": 1
+  },
+  {
+    "name": "Juego de copas",
+    "imageUrl": "https://images.unsplash.com/photo-1600185365483-26d7c4f4b5b9",
+    "order": 2
+  },
+  {
+    "name": "Tostadora",
+    "imageUrl": "https://images.unsplash.com/photo-1586201375761-83865001e17b",
+    "productUrl": "https://www.mercadolibre.com.uy/",
+    "order": 3
+  },
+  {
+    "name": "Jarra eléctrica",
+    "imageUrl": "https://images.unsplash.com/photo-1616627980999-8d8e3b1e6d8b",
+    "order": 4
+  },
+  {
+    "name": "Juego de sábanas",
+    "imageUrl": "https://images.unsplash.com/photo-1600180758895-9c99b5d45b4d",
+    "order": 5
+  }
+]

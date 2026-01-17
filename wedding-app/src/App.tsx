@@ -1,27 +1,44 @@
+import { useEffect, useState } from "react";
+import {
+  subscribeToGifts,
+  type Gift,
+} from "./app/services/gifts.service";
+import { GiftSelectionModal } from "./components/GiftSelectionModal";
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+export default function App() {
+  const [gifts, setGifts] = useState<Gift[]>([]);
+  const [selectedGift, setSelectedGift] = useState<Gift | null>(null);
 
-function App() {
+  useEffect(() => {
+    return subscribeToGifts(setGifts);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <p className="read-the-docs">
-        Working....
-      </p>
-      
-    </>
-  )
-}
+    <div>
+      <h1>Lista de regalos</h1>
 
-export default App
+      {gifts.map((gift) => (
+        <div key={gift.id}>
+          <h4>{gift.name}</h4>
+
+          {gift.selected ? (
+            <span>🎁 Ya regalado</span>
+          ) : (
+            <button onClick={() => setSelectedGift(gift)}>
+              Regalar
+            </button>
+          )}
+        </div>
+      ))}
+
+      {selectedGift && (
+        <GiftSelectionModal
+          open={true}
+          giftId={selectedGift.id}
+          giftName={selectedGift.name}
+          onClose={() => setSelectedGift(null)}
+        />
+      )}
+    </div>
+  );
+}
