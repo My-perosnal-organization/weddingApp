@@ -5,6 +5,7 @@ import { selectGift } from "../app/services/gifts.service";
 type Props = {
   open: boolean;
   onClose: () => void;
+  onSuccess: () => void;
   giftId: string;
   giftName: string;
 };
@@ -12,6 +13,7 @@ type Props = {
 export function GiftSelectionModal({
   open,
   onClose,
+  onSuccess,
   giftId,
   giftName,
 }: Props) {
@@ -20,12 +22,14 @@ export function GiftSelectionModal({
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null); // 👈 NUEVO
 
   if (!open) return null;
 
   async function handleConfirm() {
     try {
       setLoading(true);
+      setError(null);
 
       await createGiftSelection({
         giftId,
@@ -35,43 +39,53 @@ export function GiftSelectionModal({
         message,
       });
 
-      // marcar regalo SOLO después de confirmar
-      await selectGift(giftId);
+      await selectGift(giftId); // 🚨 puede fallar por concurrencia
 
+      onSuccess();
       onClose();
-      alert("¡Gracias por el regalo! 💛");
-    } catch (e) {
-      alert("Error al confirmar el regalo" + e);
-    } finally {
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        if (e.message.includes("ya fue seleccionado")) {
+          setError("Lo sentimos, alguien ya eligió este regalo 💛");
+        } else {
+          setError("Ocurrió un error, intentá nuevamente");
+        }
+      } else {
+        setError("Ocurrió un error inesperado");
+      }
+    }finally {
       setLoading(false);
     }
   }
 
   return (
-    <div style={overlay}>
-      <div style={modal}>
-        <h3>Regalar: {giftName}</h3>
+    <div className="gift-modal-overlay">
+      <div className="gift-modal">
+        <h3 className="gift-modal-title">{giftName}</h3>
 
-        <label>
-          <input
-            type="radio"
-            checked={visibility === "anonymous"}
-            onChange={() => setVisibility("anonymous")}
-          />
-          Anónimo
-        </label>
+        <div className="gift-radio">
+          <label>
+            <input
+              type="radio"
+              checked={visibility === "anonymous"}
+              onChange={() => setVisibility("anonymous")}
+            />
+            Anónimo
+          </label>
 
-        <label>
-          <input
-            type="radio"
-            checked={visibility === "public"}
-            onChange={() => setVisibility("public")}
-          />
-          Público
-        </label>
+          <label>
+            <input
+              type="radio"
+              checked={visibility === "public"}
+              onChange={() => setVisibility("public")}
+            />
+            Público
+          </label>
+        </div>
 
         {visibility === "public" && (
           <input
+            className="gift-input"
             placeholder="Tu nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -79,36 +93,24 @@ export function GiftSelectionModal({
         )}
 
         <textarea
+          className="gift-textarea"
           placeholder="Mensaje opcional"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
 
-        <div style={{ display: "flex", gap: 8 }}>
-          <button onClick={onClose} disabled={loading}>
+        {/* 👇 MENSAJE DE ERROR */}
+        {error && <p className="gift-error">{error}</p>}
+
+        <div className="gift-actions">
+          <button onClick={onClose} disabled={loading} className="ghost-btn">
             Cancelar
           </button>
-          <button onClick={handleConfirm} disabled={loading}>
-            Confirmar
+          <button onClick={handleConfirm} disabled={loading} className="gift-btn">
+            {loading ? "Confirmando…" : "Confirmar"}
           </button>
         </div>
       </div>
     </div>
   );
 }
-
-const overlay: React.CSSProperties = {
-  position: "fixed",
-  inset: 0,
-  background: "rgba(0,0,0,0.4)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const modal: React.CSSProperties = {
-  background: "#fff",
-  padding: 20,
-  width: 320,
-  borderRadius: 8,
-};

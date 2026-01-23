@@ -860,3 +860,176 @@ button {
     letter-spacing: 4px;
   }
 }
+
+/*MODAL GIFTS*/
+.gifts-section {
+  background-color: #fdfbf6;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.gifts-icon {
+  display: block;
+  margin: 0 auto;
+  width: 400px;     
+  opacity: 0.9;
+}
+@media (max-width: 480px) {
+  .gifts-icon {
+     width: 300px;
+  }
+}
+
+.gifts-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: 44px;
+  letter-spacing: 5px;
+  color: #9aa78c;
+  margin-bottom: 12px;
+}
+
+.gifts-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  color: #9aa78c;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.gifts-toggle {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #9aa78c;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gifts-toggle.open {
+  transform: rotate(180deg);
+}
+
+.gifts-list {
+  margin-top: 32px;
+  display: grid;
+  gap: 16px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gift-card {
+  border: 1px solid rgba(154, 167, 140, 0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gift-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #9aa78c;
+}
+
+.gift-btn {
+  background-color: #9aa78c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+
+.gift-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gift-modal {
+  background: #fdfbf6;
+  padding: 32px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.gift-modal-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  color: #9aa78c;
+  margin-bottom: 16px;
+}
+
+.gift-input,
+.gift-textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(154, 167, 140, 0.4);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.gift-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.ghost-btn {
+  background: none;
+  border: none;
+  color: #9aa78c;
+  font-family: "Montserrat", sans-serif;
+}
+.gift-success {
+  margin: 20px auto 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #9aa78c;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gift-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #8fb29a; 
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.gift-error {
+  margin-top: 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: #b35c5c; 
+  text-align: center;
+}
+
+
