@@ -599,7 +599,7 @@ button {
 
 /*PLAYLIST SECTION*/
 .playlist-section {
-  background-color: #fdfbf6;
+  background-color: #fffdf9;
   padding: 120px 20px;
   text-align: center;
 }
@@ -863,7 +863,7 @@ button {
 
 /*MODAL GIFTS*/
 .gifts-section {
-  background-color: #fdfbf6;
+  background-color: #fffdf9;
   padding: 120px 20px;
   text-align: center;
 }
@@ -1032,4 +1032,171 @@ button {
   text-align: center;
 }
 
+/*Program Modal*/
+
+/* OVERLAY */
+.program-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* MODAL */
+.program-section {
+  background: #fffdf9;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* CLOSE */
+.program-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #9aa78c;
+  cursor: pointer;
+}
+
+/* TITLE */
+.program-title {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #9AA78C;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* TIMELINE */
+.program-timeline {
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ITEM */
+.program-item {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+/* LEFT */
+.program-item.left {
+  direction: rtl;
+}
+
+.program-item.left .program-side {
+  direction: ltr;
+  text-align: left;
+  padding-left: 12px;
+}
+
+.program-item.right .program-side {
+  text-align: right;
+  padding-right: 12px;
+}
+.program-heart {
+  font-size: 14px;
+  color: #9aa78c;
+  background: #fdfbf6;
+  padding: 2px;
+  z-index: 2;
+  line-height: 1;
+}
+.program-time {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #9aa78c;
+}
+
+.program-text {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  color: #9aa78c;
+}
+
+/* CENTER */
+.program-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.program-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #9aa78c;
+}
+
+.program-timeline {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.program-timeline::before {
+  content: "";
+  position: absolute;
+  top: 24px;        
+  bottom: 24px;     
+  left: 50%;
+  width: 2px;
+  background: #9aa78c;
+  transform: translateX(-50%);
+}
+
+
+/* RIGHT */
+.program-right img {
+  width: 56px;
+  opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  
+  .program-section {
+    background: #fffdf9;
+    padding: 120px 20px;
+    text-align: center;
+  }
+
+  .program-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 300;
+    font-size: 42px;
+    letter-spacing: 6px;
+    color: #9AA78C;
+    margin: 0 0 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .program-icon-side img {
+    width: 94px;
+  }
+  .program-timeline {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-top: 32px;   
+  padding-bottom: 32px;
+}
+
+
+}
 

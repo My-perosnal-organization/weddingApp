@@ -5,6 +5,7 @@ import { GiftsSection } from "./components/GiftsSection";
 import { Footer } from "./components/Footer";
 import { LocationsSection } from "./components/LocationsSection";
 import { PartySection } from "./components/PartySection";
+import { ProgramSection } from "./components/ProgramSection";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <DateSection />
       <LocationsSection />
       <PartySection />
+      <ProgramSection />
       <PlaylistSection />
       <GiftsSection />
       <Footer />
