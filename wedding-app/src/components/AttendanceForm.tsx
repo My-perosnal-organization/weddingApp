@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { createAttendance } from "../app/services/attendance.service";
 
+import confetti from "canvas-confetti";
+
+
+
 type Props = {
   onCancel: () => void;
 };
@@ -13,6 +17,30 @@ export function AttendanceForm({ onCancel }: Props) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+
+  function launchFireworks() {
+    const duration = 2500;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }
   async function handleSubmit() {
     if (!name || !family || !guests) return;
 
@@ -24,6 +52,7 @@ export function AttendanceForm({ onCancel }: Props) {
         guests,
         comments,
       });
+      launchFireworks();
       setSuccess(true);
     } finally {
       setLoading(false);
