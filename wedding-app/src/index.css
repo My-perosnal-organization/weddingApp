@@ -289,6 +289,7 @@ button {
 
 /* BOTÓN */
 .rsvp-btn {
+  text-decoration: none;
   background: #8a927b;
   color: #fff;
   border: none;
@@ -844,6 +845,7 @@ button {
   .rsvp-btn,
   .ceremony-button,
   .party-btn {
+    text-decoration: none;
     width: 100%;
     max-width: 280px;
   }
@@ -1254,6 +1256,30 @@ button {
 
 .ghost-btn:hover {
   background: rgba(154, 167, 140, 0.08);
+}
+.ceremony-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.rsvp-btn {
+  padding: 12px 18px;
+  font-family: inherit;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.rsvp-btn.secondary {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 

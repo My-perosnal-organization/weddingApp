@@ -8,11 +8,19 @@ export function PartySection() {
       <div className="party-block">
         <h2 className="party-title">CEREMONIA</h2>
 
-        <p className="ceremony-time">18:30 pm Sabado 21</p>
+        <p className="ceremony-time">18:00 pm </p>
+        <p className="ceremony-time">Sabado 21</p>
 
         <p className="ceremony-place">LA CHINCHILLA</p>
 
-        <a className="rsvp-btn">CÓMO LLEGAR</a>
+        <a
+          className="rsvp-btn"
+          href="https://maps.app.goo.gl/awA7xvE1J419qvDr8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CÓMO LLEGAR
+        </a>
       </div>
 
       {/* ===== FIESTA ===== */}

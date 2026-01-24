@@ -51,11 +51,19 @@ export function LocationsSection() {
 
             <h2 className="ceremony-title">CIVIL</h2>
 
-            <p className="ceremony-time">Viernes 17:00 pm</p>
+            <p className="ceremony-time">17:00 pm</p>
+            <p className="ceremony-time">Viernes 20</p>
 
             <p className="ceremony-place">Municipio La Floresta</p>
 
-            <a className="rsvp-btn">CÓMO LLEGAR</a>
+            <a
+                className="rsvp-btn"
+                href="https://maps.app.goo.gl/tLgW9i5wKPXYxoNY9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                CÓMO LLEGAR
+            </a>
 
         </div>
         <img
