@@ -456,7 +456,7 @@ button {
 /*CEREMONIA STYLE*/
 .party-section {
   background-color: #fffdf9;
-  padding: 40px 20px 120px;
+  padding: 40px 20px 80px;
   text-align: center;
   margin-top: -40px;
 }
@@ -1048,6 +1048,14 @@ button {
   text-align: center;
 }
 
+.party-section + .carousel-section {
+  padding-top: 20px;
+}
+
+.program-section + .playlist-section {
+  padding-top: 64px;
+}
+
 /* CLOSE */
 .program-close {
   position: absolute;
@@ -1282,4 +1290,84 @@ button {
   overflow: hidden;
 }
 
+/*CARRUSEL*/
+.carousel-section {
+  overflow: hidden;
+  padding: 32px 0;
+}
 
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: carousel-scroll 25s linear infinite;
+}
+
+.carousel-item {
+  width: 70vw;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;   /* cuadradas */
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animación */
+@keyframes carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bank-section {
+  background: #fffdf9;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.bank-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+/*INFO BANK*/
+.bank-info {
+  margin-top: 20px;
+}
+
+.bank-name {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.bank-account {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.bank-info .rsvpnot-btn {
+  display: block;
+  margin: 12px auto 0;
+}
+
+.footer {
+  background: #fffdf9;
+  padding: 64px 16px 48px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: clamp(28px, 12vw, 49px);
+  line-height: 1.2;
+}

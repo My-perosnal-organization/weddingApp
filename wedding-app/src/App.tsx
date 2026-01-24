@@ -6,6 +6,8 @@ import { Footer } from "./components/Footer";
 import { LocationsSection } from "./components/LocationsSection";
 import { PartySection } from "./components/PartySection";
 import { ProgramSection } from "./components/ProgramSection";
+import { PhotosCarouselSection } from "./components/PhotosCarouselSection";
+import { BankAccountSection } from "./components/BankAccountSection";
 
 export default function App() {
   return (
@@ -14,8 +16,10 @@ export default function App() {
       <DateSection />
       <LocationsSection />
       <PartySection />
+      <PhotosCarouselSection />
       <ProgramSection />
       <PlaylistSection />
+      <BankAccountSection />
       <GiftsSection />
       <Footer />
     </div>
