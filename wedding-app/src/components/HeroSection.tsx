@@ -1,4 +1,5 @@
-import headerImage from "../assets/headerImage.jpeg"
+//import headerImage from "../assets/headerImage.jpeg"
+import heroImage from "../assets/heroImagev2.png"
 export function HeroSection() {
   return (
     <section className="hero-section">
@@ -7,10 +8,9 @@ export function HeroSection() {
         
          <img
             className="hero-image"
-            src={headerImage}
+            src={heroImage}
             alt=""
         />
-
 
         <div className="hero-overlay">
           <span className="hero-eyebrow">NOS CASAMOS</span>

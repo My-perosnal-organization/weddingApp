@@ -17,6 +17,7 @@
   --card: #ffffff;
   --font-title: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --paper-bg: #fffdf9;
 }
 
 *,
@@ -120,6 +121,7 @@ button {
 }
 
 .hero-media {
+  background: var(--paper-bg);
   position: relative;
   width: 100%;
   height: auto;
@@ -132,6 +134,7 @@ button {
   max-height: 50vh;   
   object-fit: cover;
   display: block;
+  object-position: center 83%; 
 }
 .hero-overlay {
   position: absolute;
@@ -1371,3 +1374,5 @@ button {
   font-size: clamp(28px, 12vw, 49px);
   line-height: 1.2;
 }
+
+

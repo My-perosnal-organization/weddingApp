@@ -3,7 +3,7 @@ import { useState } from "react";
 export function BankAccountSection() {
   const [showAccount, setShowAccount] = useState(false);
   const accountText = "CA (110461545-00001) BROU";
-
+  const accountName = "Nombre: Melany Fagundez Leal"
   function copyAccount() {
     navigator.clipboard.writeText(accountText);
     alert("Número de cuenta copiado 🤍");
@@ -27,6 +27,7 @@ export function BankAccountSection() {
         <div className="bank-info">
           <p className="bank-name">Banco República (BROU)</p>
           <p className="bank-account">{accountText}</p>
+          <p className="bank-account">{accountName}</p>
 
           <button className="rsvp-btn primary" onClick={copyAccount}>
             COPIAR NÚMERO DE CUENTA
