@@ -24,20 +24,20 @@ export function ProgramSection() {
           side="right"
         />
         <TimelineItem
-          time="20:00 hrs"
-          text="Recepción"
+          time="20:45 hrs"
+          text="Discursos"
           img={copasImg}
           side="left"
         />
         <TimelineItem
-          time="20:30 hrs"
+          time="21:30 hrs"
           text="Cena"
           img={cenaImg}
           side="right"
         />
         <TimelineItem
-          time="21:30 hrs"
-          text="Todo el mundo a bailar"
+          time="23:00 hrs"
+          text="Todos a bailar"
           img={baileImg}
           side="left"
         />
