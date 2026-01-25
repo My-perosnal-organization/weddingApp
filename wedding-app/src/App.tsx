@@ -8,6 +8,7 @@ import { PartySection } from "./components/PartySection";
 import { ProgramSection } from "./components/ProgramSection";
 import { PhotosCarouselSection } from "./components/PhotosCarouselSection";
 import { BankAccountSection } from "./components/BankAccountSection";
+import { DressCodeSection } from "./components/DressCodeSection";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <LocationsSection />
       <PartySection />
       <PhotosCarouselSection />
+      <DressCodeSection />
       <ProgramSection />
       <PlaylistSection />
       <BankAccountSection />
